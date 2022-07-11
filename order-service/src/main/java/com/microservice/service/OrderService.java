@@ -32,7 +32,7 @@ public class OrderService {
                 .map(this::mapToDto).collect(Collectors.toList());
         //agrego lista de items a la orden
         order.setOrderLineItemsList(orderLineItems);
-        //obtengo skuCode de cada item
+        //obtengo skuCode de cada item para trabajar con metodo de inventario
         List<String> skuCodes = order.getOrderLineItemsList()
                 .stream().map(OrderLineItems::getSkuCode).toList();
 

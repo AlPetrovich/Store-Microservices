@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class InventoryResponseDTO {
-
+    //creado en microservicio inventario - NO podemos acceder a ella dentro de order por eso DUPLICO
     private String skuCode;
     private boolean isInStock;
 }
