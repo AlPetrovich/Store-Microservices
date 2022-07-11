@@ -30,9 +30,9 @@ public class OrderService {
         List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDtoList()
                 .stream()
                 .map(this::mapToDto).collect(Collectors.toList());
-
+        //agrego lista de items a la orden
         order.setOrderLineItemsList(orderLineItems);
-        //obtener
+        //obtengo skuCode de cada item
         List<String> skuCodes = order.getOrderLineItemsList()
                 .stream().map(OrderLineItems::getSkuCode).toList();
 

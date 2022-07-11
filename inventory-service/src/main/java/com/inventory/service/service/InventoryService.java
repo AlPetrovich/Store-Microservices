@@ -17,6 +17,7 @@ public class InventoryService {
     //devuelve una lista
     @Transactional(readOnly = true) //solo de lectura
     public List<InventoryResponseDTO> isInStock(List<String> skuCode) {
+        //objetos de inventario que coincidan con el codigo
         return inventoryRepository.findBySkuCodeIn(skuCode)
                 .stream()
                 .map(inventory ->

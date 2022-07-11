@@ -1,12 +1,9 @@
 package com.inventory.service.controller;
-
 import com.inventory.service.dto.InventoryResponseDTO;
 import com.inventory.service.service.InventoryService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
