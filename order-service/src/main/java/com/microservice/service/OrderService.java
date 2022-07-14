@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -37,9 +37,10 @@ public class OrderService {
                 .stream().map(OrderLineItems::getSkuCode).toList();
 
         //LLamar al servicio inventario y haga el pedido si el producto esta en stock
-        //http://localhost:8080/api/inventory?skuCode=iphone&skuCode=samsung&skuCode=nokia
-        InventoryResponseDTO[] inventoryResponseArray = webClient.get()
-                .uri("http://localhost:8082/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
+        //http://localhost:8080/api/inventory?skuCode=iphone&skuCode=samsung&skuCode=nokia ->> deprecated
+        //obtener una instancia de WebClient
+        InventoryResponseDTO[] inventoryResponseArray = webClientBuilder.build().get()
+                .uri("http://inventory-service/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
                         .retrieve()
                         .bodyToMono(InventoryResponseDTO[].class) //almacenar esta respuesta (matriz de objetos) de inventario dentro de order-service
                         .block();
