@@ -8,7 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
-    //proporcionamos una lista de codigos y devuelve objetos de inventario que coincidan con el codigo
     List<Inventory> findBySkuCodeIn(List<String> skuCode);
 }
 
