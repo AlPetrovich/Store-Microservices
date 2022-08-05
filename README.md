@@ -1,9 +1,9 @@
-# Store-Microservices
+## Store-Microservices 
 
 
-## Tecnologias Utilizadas
+## Technologies
 
-Los servicios / herramientas que hemos empleado para realizar este proyecto son: 
+The services / tools used to carry out this project are:
 
 - Service Registry & Service Discovery with Eureka
 - OAuth 2.0
