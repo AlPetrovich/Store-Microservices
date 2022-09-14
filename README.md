@@ -5,13 +5,13 @@
 
 The services / tools used to carry out this project are:
 
-- Service Registry & Service Discovery with Eureka
+- Eureka
+- Kafka
 - OAuth 2.0
-- Edge Server
+- Gateway
 - Distributed Tracing with Zipkin & Sleuth
 - Circuit Breaker
 - Docker
 
--- kafka in progress
 
 ![store-microservice](https://user-images.githubusercontent.com/86859904/170171178-8c7b0056-0d87-4e59-ac75-1f506aa8eaa2.PNG)
